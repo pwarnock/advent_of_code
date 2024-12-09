@@ -1,44 +1,44 @@
-// import java.io.IOException;
-// import java.net.URISyntaxException;
-// import java.nio.file.Files;
-// import java.nio.file.Paths;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 
 public class Day8 {  
     public static void main(String[] args) {  
         // Define the map as a 2D char array  
-        char[][] map = {  
-            "............".toCharArray(),  
-            "........0...".toCharArray(),  
-            ".....0......".toCharArray(),  
-            ".......0....".toCharArray(),  
-            "....0.......".toCharArray(),  
-            "......A.....".toCharArray(),  
-            "............".toCharArray(),  
-            "............".toCharArray(),  
-            "........A...".toCharArray(),  
-            ".........A..".toCharArray(),  
-            "............".toCharArray(),  
-            "............".toCharArray()  
-        };  
+        // char[][] map = {  
+        //     "............".toCharArray(),  
+        //     "........0...".toCharArray(),  
+        //     ".....0......".toCharArray(),  
+        //     ".......0....".toCharArray(),  
+        //     "....0.......".toCharArray(),  
+        //     "......A.....".toCharArray(),  
+        //     "............".toCharArray(),  
+        //     "............".toCharArray(),  
+        //     "........A...".toCharArray(),  
+        //     ".........A..".toCharArray(),  
+        //     "............".toCharArray(),  
+        //     "............".toCharArray()  
+        // };  
 
-        // char[][] map;  
+        char[][] map;  
 
-        // try {  
-        //     // Read all lines from the input file  
-        //     List<String> lines = Files.readAllLines(Paths.get(Day8.class.getResource("input.txt").toURI()));
+        try {  
+            // Read all lines from the input file  
+            List<String> lines = Files.readAllLines(Paths.get(Day8.class.getResource("input.txt").toURI()));
     
-        //     // Initialize the map based on the input file  
-        //     map = new char[lines.size()][];  
+            // Initialize the map based on the input file  
+            map = new char[lines.size()][];  
     
-        //     for (int i = 0; i < lines.size(); i++) {  
-        //         map[i] = lines.get(i).toCharArray();  
-        //     }  
+            for (int i = 0; i < lines.size(); i++) {  
+                map[i] = lines.get(i).toCharArray();  
+            }  
     
-        // } catch (IOException | URISyntaxException e) {  
-        //     e.printStackTrace(); // Handle the exception  
-        //     return; // Exit the program if the file cannot be read  
-        // }  
+        } catch (IOException | URISyntaxException e) {  
+            e.printStackTrace(); // Handle the exception  
+            return; // Exit the program if the file cannot be read  
+        }  
 
         // Identify frequencies  
         Map<Character, List<Position>> frequencyMap = identifyFrequencies(map);  
